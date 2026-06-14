@@ -1,3 +1,5 @@
+"use client";
+
 import { Home, Briefcase, Contact, BrainCircuit } from 'lucide-react'
 import { NavBar } from "../ui/tubelight-navbar"
 import { useState, useEffect } from "react";

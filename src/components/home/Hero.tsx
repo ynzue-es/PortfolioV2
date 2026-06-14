@@ -1,7 +1,13 @@
+"use client";
+
 import Marquee from "react-fast-marquee";
-import leftArrow from "/images/arrow/left-break.png"
-import ynzue from "/images/ynzue-es.jpeg"
+import { motion } from "framer-motion";
 import ButtonHero from "../my-ui/button-hero";
+
+const easeOut: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
+
+const leftArrow = "/images/arrow/left-break.png";
+const ynzue = "/images/ynzue-es.jpeg";
 
 const Hero = () => {
 
@@ -9,8 +15,20 @@ const Hero = () => {
 
   return (
     <div className="flex flex-col gap-8" id="home">
-      <h1 className="text-[14vw] md:text-[9vw] md:mt-0 mt-8">YANNIS <br className="block md:hidden"/> NZUE ESSONO</h1>
-      <div className="flex flex-col md:flex-row justify-between items-center h-[100px] md:h-12 w-[100%] md:px-8">
+      <motion.h1
+        className="text-[14vw] md:text-[9vw] md:mt-0 mt-8"
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: easeOut }}
+      >
+        YANNIS <br className="block md:hidden"/> NZUE ESSONO
+      </motion.h1>
+      <motion.div
+        className="flex flex-col md:flex-row justify-between items-center h-[100px] md:h-12 w-[100%] md:px-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.35, ease: easeOut }}
+      >
         <div className="w-[100%] md:w-[80%] ">
           <Marquee autoFill={true} gradient={true} gradientColor="hsl(var(--background))">
             <ul className="flex items-center">
@@ -31,8 +49,15 @@ const Hero = () => {
         <div className="w-[100%] h-[100%] flex justify-center mt-[20px] md:mt-0">
           <ButtonHero />
         </div>
-      </div>
-      <img className="rounded-bl-[20vw] md:h-auto h-[60vh] object-cover" src={ynzue} alt="42 image" />
+      </motion.div>
+      <motion.img
+        className="rounded-bl-[20vw] md:h-auto h-[60vh] object-cover"
+        src={ynzue}
+        alt="42 image"
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.9, delay: 0.5, ease: easeOut }}
+      />
     </div>
   );
 };

@@ -1,7 +1,10 @@
+"use client";
+
 import { useRef, useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "../../assets/animations/confeti.json";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Reveal } from "../my-ui/reveal";
 
 const Process = () => {
     const targetRef1 = useRef(null);
@@ -51,10 +54,10 @@ const Process = () => {
 
     return (
         <div className="flex flex-col gap-16 mt-24">
-            <div>
+            <Reveal>
                 <p className="font-mono text-gray-400 font-semibold">PROCESS</p>
                 <h2 className="text-[9vw] md:text-[5vw] leading-none">3 Steps & <br/> It's Finished</h2>
-            </div>
+            </Reveal>
             <div>
                 <p className="px-8 text-2xl lg:text-4xl">Quick and efficient, from concept to execution.</p>
                 <p className="px-12 mt-4 text-gray-400">The process may vary depending on the project's scope, so if you have questions or need more info, feel free to reach out!</p>

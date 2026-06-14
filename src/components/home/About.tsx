@@ -1,5 +1,8 @@
+"use client";
+
 import Marquee from "react-fast-marquee"
 import Clock from "../my-ui/clock"
+import { Reveal } from "../my-ui/reveal"
 
 const About = () => {
     
@@ -21,17 +24,17 @@ const About = () => {
                             alt="ynzue-es" />
                     </div>
                     <div className="border-t flex flex-col lg:w-[70%] w-[100%] p-8 md:p-16 lg:p-24 gap-24 text-left">
-                        <div>
+                        <Reveal>
                             <p className="font-mono text-gray-400 font-semibold">ABOUT ME</p>
                             <h2 className="text-5xl md:text-[5vw] leading-none">Developer <br/> Experience <br/> & Interactions</h2>
-                        </div>
-                        <p className="text-[5vw] md:text-[2vw]">
-                            I build solutions that not only strengthen 
-                            the product but also align with business goals. I seamlessly navigate between 
-                            frontend, backend, and architecture—structuring code in a way that enhances 
+                        </Reveal>
+                        <Reveal className="text-[5vw] md:text-[2vw]">
+                            I build solutions that not only strengthen
+                            the product but also align with business goals. I seamlessly navigate between
+                            frontend, backend, and architecture—structuring code in a way that enhances
                             scalability, performance, and maintainability.
-                        </p>
-                        <div>
+                        </Reveal>
+                        <Reveal>
                             <p className="font-mono text-neutral-400 font-semibold">PAST EXPERIENCE</p>
                             <div className="mt-8 flex">
                                 <div className="flex flex-col items-center w-[1%] pt-1">
@@ -72,7 +75,7 @@ const About = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </Reveal>
                     </div>
                 </div>
                 <div className="sticky top-0 md:border-l md:border-t h-[400px] md:h-[100vh] md:w-[30%] w-[100%] p-8 lg:p-16 md:p-8 text-left">
