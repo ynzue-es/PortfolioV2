@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Yannis Nzue Essono — Full-Stack Developer",
   description:
     "Portfolio of Yannis Nzue Essono — full-stack developer, entrepreneur and 42 student. Selected projects, services and an AI assistant.",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({
