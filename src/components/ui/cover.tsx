@@ -1,9 +1,8 @@
 "use client";
 import { useEffect, useId, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
-import { SparklesCore } from "@/components/ui/sparkles";
 
 export const Cover = ({
   children,
@@ -40,52 +39,6 @@ export const Cover = ({
       ref={ref}
       className="relative hover:bg-neutral-900  group/cover inline-block dark:bg-neutral-900 bg-neutral-100 px-2 py-2  transition duration-200 rounded-sm"
     >
-      <AnimatePresence>
-        {hovered && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{
-              opacity: {
-                duration: 0.2,
-              },
-            }}
-            className="h-full w-full overflow-hidden absolute inset-0"
-          >
-            <motion.div
-              animate={{
-                translateX: ["-50%", "0%"],
-              }}
-              transition={{
-                translateX: {
-                  duration: 10,
-                  ease: "linear",
-                  repeat: Infinity,
-                },
-              }}
-              className="w-[200%] h-full flex"
-            >
-              <SparklesCore
-                background="transparent"
-                minSize={0.4}
-                maxSize={1}
-                particleDensity={500}
-                className="w-full h-full"
-                particleColor="#FFFFFF"
-              />
-              <SparklesCore
-                background="transparent"
-                minSize={0.4}
-                maxSize={1}
-                particleDensity={500}
-                className="w-full h-full"
-                particleColor="#FFFFFF"
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
       {beamPositions.map((position, index) => (
         <Beam
           key={index}
